@@ -20,7 +20,6 @@ public class Chipkaart
     {
 	this.saldo = this.saldo - instapTarief;
 	this.ingechecked = true;
-	System.out.println("U bent nu ingechecked.");
     }
 
     public boolean benIkIngechecked()
@@ -33,6 +32,9 @@ public class Chipkaart
 	return this.saldo;
     }
     
+    public boolean isMijnKaartGeldig() {
+	return this.geldigheid;
+    }
     
     
 }
