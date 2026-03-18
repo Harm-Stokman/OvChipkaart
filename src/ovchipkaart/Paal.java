@@ -14,4 +14,7 @@ public class Paal
 	return this.instapTarief;
     }
     
+    public void incheck(Chipkaart chipkaart) {
+    }
+    
 }
