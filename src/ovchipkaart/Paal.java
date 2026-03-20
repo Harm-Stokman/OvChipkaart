@@ -9,12 +9,8 @@ public class Paal
     {
 	this.instapTarief = instapTarief;
     }
-
-    public double getInstapTarief()
-    {
-	return this.instapTarief;
-    }
-
+    
+    
     public void inchecken(Chipkaart chipkaart)
     {
 	boolean geldigheid = chipkaart.isMijnKaartGeldig();
