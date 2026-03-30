@@ -3,14 +3,20 @@ package ovchipkaart;
 public class Paal
 {
 
-    private double instapTarief;
+    private double instapTarief = 20.0;
+    private Locatie locatie;
 
-    public Paal(double instapTarief)
+    public Paal(double instapTarief, Locatie locatie)
     {
 	this.instapTarief = instapTarief;
+	this.locatie = locatie;
     }
-    
-    
+
+    public Paal(Locatie locatie)
+    {
+	this.locatie = locatie;
+    }
+
     public void inchecken(Chipkaart chipkaart)
     {
 	boolean geldigheid = chipkaart.isMijnKaartGeldig();
@@ -19,15 +25,22 @@ public class Paal
 
 	if (geldigheid && !ingechecked && genoegSaldo >= instapTarief)
 	{
-	    chipkaart.inchecken(instapTarief);
+	    chipkaart.inchecken(this.locatie, instapTarief);
 	    System.out.println("U bent ingechecked.");
-
-	} else if (!geldigheid) {
+	} else if (!geldigheid)
+	{
 	    System.out.println("Ongeldige kaart");
-	} else if (ingechecked) {
+	} else if (ingechecked)
+	{
 	    System.out.println("U bent al ingechecked, Probeer eerst uit te checken.");
-	} else if (genoegSaldo < instapTarief) {
+	} else if (genoegSaldo < instapTarief)
+	{
 	    System.out.println("Onvoldoende saldo.");
 	}
     }
-} 
+
+    public void uitchecken(Chipkaart chipkaart)
+    {
+
+    }
+}

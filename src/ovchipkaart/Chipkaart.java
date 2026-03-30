@@ -16,25 +16,29 @@ public class Chipkaart
 	this.ingechecked = ingechecked;
     }
 
-    public void inchecken(double instapTarief)
+    public void inchecken(Locatie locatie, double instapTarief)
     {
 	this.saldo = this.saldo - instapTarief;
 	this.ingechecked = true;
+    }
+    
+    public void uitchecken(Locatie locatie, double instapTarief) {
+	
+	this.ingechecked = false;
     }
 
     public boolean benIkIngechecked()
     {
 	return this.ingechecked;
     }
-
-    public double getSaldo()
-    {
-	return this.saldo;
-    }
-    
+  
     public boolean isMijnKaartGeldig() {
 	return this.geldigheid;
     }
     
+    public double getSaldo()
+    {
+	return this.saldo;
+    }
     
 }
