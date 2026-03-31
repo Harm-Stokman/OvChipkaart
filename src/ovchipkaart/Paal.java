@@ -41,6 +41,11 @@ public class Paal
 
     public void uitchecken(Chipkaart chipkaart)
     {
-
+	boolean ingechecked = chipkaart.benIkIngechecked();
+	
+	if (ingechecked) {
+	    chipkaart.uitchecken(locatie, instapTarief);
+	}
+	
     }
 }

@@ -7,6 +7,8 @@ public class Chipkaart
     private int kaartnummer;
     private boolean geldigheid;
     private boolean ingechecked;
+    private Locatie startLocatie;
+
 
     public Chipkaart(double saldo, int kaartnummer, boolean geldigheid, boolean ingechecked)
     {
@@ -20,11 +22,13 @@ public class Chipkaart
     {
 	this.saldo = this.saldo - instapTarief;
 	this.ingechecked = true;
+	startLocatie = locatie;
     }
     
     public void uitchecken(Locatie locatie, double instapTarief) {
 	
 	this.ingechecked = false;
+	this.saldo = this.saldo + instapTarief;
     }
 
     public boolean benIkIngechecked()

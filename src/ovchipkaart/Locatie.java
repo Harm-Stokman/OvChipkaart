@@ -12,4 +12,11 @@ public class Locatie
 	this.xPositie = xPositie;
 	this.yPositie = yPositie;
     }
+    
+    public double afstandBerekenen(Locatie bestemming) {
+	
+	
+	
+    }
+    
 }
