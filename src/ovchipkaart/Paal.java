@@ -45,6 +45,9 @@ public class Paal
 	
 	if (ingechecked) {
 	    chipkaart.uitchecken(locatie, instapTarief);
+	    System.out.println("U bent uitgechecked.");
+	} else {
+	    System.out.println("U bent nog niet ingechecked, zorg ervoor dat u eerst bent ingechecked.");
 	}
 	
     }

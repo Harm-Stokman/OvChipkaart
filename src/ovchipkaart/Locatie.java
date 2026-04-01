@@ -15,7 +15,17 @@ public class Locatie
     
     public double afstandBerekenen(Locatie bestemming) {
 	
+	double verschilXPos = this.xPositie - bestemming.xPositie;
+	double verschilYPos = this.yPositie - bestemming.yPositie;
+		
+	double kwadraatX = verschilXPos * verschilXPos; 
+	double kwadraatY = verschilYPos * verschilYPos; 
 	
+	double kwadraatAfstand = kwadraatX + kwadraatY;
+	
+	double afstand = Math.sqrt(kwadraatAfstand);
+	
+	return afstand;
 	
     }
     
