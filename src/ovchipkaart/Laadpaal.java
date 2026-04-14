@@ -5,18 +5,17 @@ public class Laadpaal
 
     private Chipkaart huidigeKaart;
 
-
-
-    public void scannen()
+    public void scannen(Chipkaart chipkaart)
     {
-
+	huidigeKaart = chipkaart;
     }
 
-    public void opwaarderenTot()
+    public void opwaarderenTot(double maxBedrag)
     {
+	
     }
 
-    public void opwaarderenMet()
+    public void opwaarderenMet(double bedrag)
     {
     }
 
