@@ -2,9 +2,9 @@ package ovchipkaart;
 
 public class Locatie
 {
-    String locatienaam;
-    double xPositie;
-    double yPositie;
+    private String locatienaam;
+    private double xPositie;
+    private double yPositie;
 
     public Locatie(String locatienaam, double xPositie, double yPositie)
     {

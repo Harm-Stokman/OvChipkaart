@@ -28,7 +28,7 @@ public class Paal
 	    chipkaart.inchecken(this.locatie, instapTarief);
 	    System.out.println("U bent ingechecked.");
 	} else if (!geldigheid)
-	{
+	{	
 	    System.out.println("Ongeldige kaart");
 	} else if (ingechecked)
 	{
