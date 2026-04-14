@@ -18,6 +18,7 @@ public class Driver
 	Paal incheckPaalTreinVenlo = new Paal(venlo);
 	Paal incheckPaalTreinEindhoven = new Paal(eindhoven);
 	Scanner sc = new Scanner(System.in);
+	Laadpaal oplaadPaal = new Laadpaal();
 	boolean systeem = true;
 	while (systeem)
 	{
