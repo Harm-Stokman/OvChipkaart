@@ -28,6 +28,15 @@ public class Chipkaart
     public void uitchecken(Locatie locatie, double instapTarief) {
 	this.ingechecked = false;
 	this.saldo = this.saldo - startLocatie.afstandBerekenen(locatie) + instapTarief;
+	startLocatie = null;
+    }
+    
+    public void opwaarderenTot(double resterendBedrag) {
+	this.saldo = this.saldo + resterendBedrag;
+    }
+    
+    public void opwaarderenMet(double toegevoegdBedrag) {
+	this.saldo = this.saldo + toegevoegdBedrag;
     }
 
     public boolean benIkIngechecked()
@@ -43,5 +52,5 @@ public class Chipkaart
     {
 	return this.saldo;
     }
-    
+      
 }
