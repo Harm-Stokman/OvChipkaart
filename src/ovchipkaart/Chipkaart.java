@@ -31,10 +31,6 @@ public class Chipkaart
 	startLocatie = null;
     }
     
-    public void opwaarderenTot(double resterendBedrag) {
-	this.saldo = this.saldo + resterendBedrag;
-    }
-    
     public void opwaarderenMet(double toegevoegdBedrag) {
 	this.saldo = this.saldo + toegevoegdBedrag;
     }

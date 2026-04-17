@@ -29,93 +29,83 @@ public class Driver
 	    {
 		System.out.println("Welke locatie wilt u bij inchecken?");
 		String startLocatie = sc.next();
-
-		switch (startLocatie)
+		if (startLocatie.equalsIgnoreCase("Nijmegen"))
 		{
-		case "nijmegen":
 		    incheckPaalTreinNijmegen.inchecken(kaart);
-		    break;
-
-		case "arnhem":
+		} else if (startLocatie.equalsIgnoreCase("Arnhem"))
+		{
 		    incheckPaalTreinArnhem.inchecken(kaart);
-		    break;
-
-		case "venlo":
+		} else if (startLocatie.equalsIgnoreCase("Venlo"))
+		{
 		    incheckPaalTreinVenlo.inchecken(kaart);
-		    break;
-
-		case "eindhoven":
+		} else if (startLocatie.equalsIgnoreCase("Eindhoven"))
+		{
 		    incheckPaalTreinEindhoven.inchecken(kaart);
-		    break;
-
-		default:
-		    System.out.println("Kies een geldige locatie.");
+		} else {
+		    System.out.println("Kies een geldige locatie");
 		}
+
 	    } else if (keuze.equalsIgnoreCase("Uitchecken") && kaart.benIkIngechecked())
 	    {
 		System.out.println("Welke locatie wilt u bij uitchecken?");
 		String bestemming = sc.next();
 
-		switch (bestemming)
+		if (bestemming.equalsIgnoreCase("Nijmegen"))
 		{
-		case "nijmegen":
 		    incheckPaalTreinNijmegen.uitchecken(kaart);
-		    break;
-
-		case "arnhem":
+		} else if (bestemming.equalsIgnoreCase("Arnhem"))
+		{
 		    incheckPaalTreinArnhem.uitchecken(kaart);
-		    break;
-
-		case "venlo":
+		} else if (bestemming.equalsIgnoreCase("Venlo"))
+		{
 		    incheckPaalTreinVenlo.uitchecken(kaart);
-		    break;
-
-		case "eindhoven":
+		} else if (bestemming.equalsIgnoreCase("Eindhoven"))
+		{
 		    incheckPaalTreinEindhoven.uitchecken(kaart);
-		    break;
-
-		default:
-		    System.out.println("Kies een geldige locatie.");
-
+		} else {
+		    System.out.println("Kies een geldige locatie");
 		}
+
 	    } else if (keuze.equalsIgnoreCase("Opwaarderen"))
 	    {
 		boolean opwaarderen = true;
 		while (opwaarderen)
 		{
 		    System.out.println(
-			    "Kies een optie: Scannen || Opwaarderen tot: || Opwaarderen met: || Stoppen || Saldo");
-		    String opwaarderingsKeuze = sc.next();
-		    if (opwaarderingsKeuze.equalsIgnoreCase("Scannen"))
-		    {
+			    "Kies een optie: 1. Scannen van kaart || 2.  Opwaarderen tot: || 3. Opwaarderen met: || 4. Stoppen || 5. Saldo checken");
+		    int opwaarderingsKeuze = sc.nextInt();
+		    switch (opwaarderingsKeuze) {
+		    case 1:
 			oplaadPaal.scannen(kaart);
-		    } else if (opwaarderingsKeuze.equalsIgnoreCase("Opwaarderentot"))
-		    {
+			break;
+	
+		    case 2:
 			System.out.println("Vul hier uw gewenste bedrag in.");
 			oplaadPaal.opwaarderenTot(sc.nextDouble());
-		    } else if (opwaarderingsKeuze.equalsIgnoreCase("Opwaarderenmet"))
-		    {
+			break;
+		    
+		    case 3:
 			System.out.println("Vul hier uw gewenste bedrag in.");
 			oplaadPaal.opwaarderenMet(sc.nextDouble());
-		    } else if (opwaarderingsKeuze.equalsIgnoreCase("Saldo"))
-		    {
-			System.out.println(oplaadPaal.getSaldo());
-		    } else if (opwaarderingsKeuze.equalsIgnoreCase("Stoppen"))
-		    {
-
+			break;
+		  
+		    case 4:
 			oplaadPaal.stoppen();
 			opwaarderen = false;
-		    } else
-		    {
+			break;
+			
+		    case 5:
+			System.out.println(oplaadPaal.getSaldo());
+			break;
+			
+		    default:
 			System.out.println("Kies een geldige optie");
 		    }
 		}
-
 	    } else
 	    {
 		System.out.println("Fout opgetreden.");
 	    }
 	}
-
     }
 }

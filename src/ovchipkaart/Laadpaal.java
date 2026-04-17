@@ -8,6 +8,7 @@ public class Laadpaal
     public void scannen(Chipkaart chipkaart)
     {
 	huidigeKaart = chipkaart;
+	System.out.println("Uw kaart is gescand.");
     }
 
     public void opwaarderenTot(double maxBedrag)
@@ -15,7 +16,8 @@ public class Laadpaal
 	if (huidigeKaart != null) {
 	double saldo = huidigeKaart.getSaldo();
 	double verschil = maxBedrag - saldo;
-	huidigeKaart.opwaarderenTot(verschil);
+	huidigeKaart.opwaarderenMet(verschil);
+	System.out.println("Het bedrag is toegevoegd aan uw saldo.");
 	} else {
 	    System.out.println("Bied eerst een kaart aan A.U.B.");
 	}
@@ -25,6 +27,7 @@ public class Laadpaal
     {
 	if (huidigeKaart != null) {
 	    huidigeKaart.opwaarderenMet(toegevoegdBedrag);
+	    System.out.println("Het bedrag is toegevoegd aan uw saldo.");
 	} else {
 	    System.out.println("Bied eerst een kaart aan A.U.B.");
 	}	
